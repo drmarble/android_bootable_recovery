@@ -74,7 +74,7 @@ $(foreach board_define,$(BOARD_RECOVERY_DEFINES), \
 LOCAL_STATIC_LIBRARIES :=
 
 LOCAL_CFLAGS += -DUSE_EXT4 -DMINIVOLD
-LOCAL_C_INCLUDES += system/extras/ext4_utils system/core/fs_mgr/include external/fsck_msdos
+LOCAL_C_INCLUDES += system/extras/ext4_utils system/core/fs_mgr/include
 LOCAL_C_INCLUDES += system/vold
 
 LOCAL_STATIC_LIBRARIES += libext4_utils_static libz libsparse_static
@@ -92,7 +92,7 @@ else
   LOCAL_SRC_FILES += $(BOARD_CUSTOM_RECOVERY_KEYMAPPING)
 endif
 
-LOCAL_STATIC_LIBRARIES += libvoldclient libsdcard libminipigz libfsck_msdos
+LOCAL_STATIC_LIBRARIES += libvoldclient libsdcard libminipigz
 LOCAL_STATIC_LIBRARIES += libmake_ext4fs libext4_utils_static libz libsparse_static
 LOCAL_STATIC_LIBRARIES += libminzip libunz libmincrypt
 
@@ -112,7 +112,7 @@ LOCAL_STATIC_LIBRARIES += libselinux
 
 include $(BUILD_EXECUTABLE)
 
-RECOVERY_LINKS := bu make_ext4fs edify busybox flash_image dump_image mkyaffs2image unyaffs erase_image nandroid reboot volume setprop getprop start stop dedupe minizip setup_adbd fsck_msdos newfs_msdos vdc sdcard pigz
+RECOVERY_LINKS := bu make_ext4fs edify busybox flash_image dump_image mkyaffs2image unyaffs erase_image nandroid reboot volume setprop getprop start stop dedupe minizip setup_adbd newfs_msdos vdc sdcard pigz
 
 # nc is provided by external/netcat
 RECOVERY_SYMLINKS := $(addprefix $(TARGET_RECOVERY_ROOT_OUT)/sbin/,$(RECOVERY_LINKS))
